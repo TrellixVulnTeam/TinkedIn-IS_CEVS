@@ -14,7 +14,7 @@ export class MockClientService {
     constructor(private http: HttpClient) {
     }
 
-    getRecommendations(user: UserModel): Observable<RecommendationModel> {
+    getRecommendations(user: UserMode): Observable<RecommendationModel> {
         return this.http.get<Array<JobPostModel>>('/assets/mocked/').pipe(
             map((json) => new RecommendationModel(json))
         );

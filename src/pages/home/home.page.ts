@@ -8,7 +8,6 @@ import { RecommendationModel } from "../../model/recommendation.model";
 import { LinkedInService } from "../../services/linked-in/linked-in.service";
 import { User } from "../../model/interfaces/user-i.model";
 import { CandidateModel } from "../../model/candidate.model";
-// import {UserModel} from '../../model/user.model';
 
 @Component({
   selector: "app-home",

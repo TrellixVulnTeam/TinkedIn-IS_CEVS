@@ -1,9 +1,8 @@
 import { Injectable } from "@angular/core";
-import { UserModel } from "../../model/user.model";
 import { RecommendationModel } from "../../model/recommendation.model";
 import { JobPostModel } from "../../model/job-post.card";
 import { Observable, of } from "rxjs";
-import { User } from "../../model/interfaces/user-i.model";
+import { CandidateModel } from "../../model/candidate.model";
 
 @Injectable({
   providedIn: "root"
@@ -11,7 +10,7 @@ import { User } from "../../model/interfaces/user-i.model";
 export class ClientService {
   constructor() {}
 
-  getRecommendations(user: User): Observable<RecommendationModel> {
+  getRecommendations(user: CandidateModel): Observable<RecommendationModel> {
     return of(new RecommendationModel([]));
   }
 

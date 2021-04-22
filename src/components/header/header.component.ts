@@ -6,7 +6,7 @@ import {ImageUtils} from '../../utils/image.utils';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent implements AfterViewInit {
+export class HeaderComponent {
     @Output() profileClickEvent = new EventEmitter();
     @Output() homeClickEvent = new EventEmitter();
     @Output() chatClickEvent = new EventEmitter();
@@ -14,8 +14,10 @@ export class HeaderComponent implements AfterViewInit {
     constructor() {
     }
 
+    /*
     ngAfterViewInit(): void {
     }
+    */
 
     profileClick() {
         this.profileClickEvent.emit();

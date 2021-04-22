@@ -12,7 +12,7 @@ import { CandidateModel } from "../../model/candidate.model";
 @Component({
   selector: "app-home",
   templateUrl: "home.page.html",
-  styleUrls: ["home.page.scss"]
+  styleUrls: ["home.page.scss"],
 })
 export class HomePage implements AfterViewInit, NavigationI {
   currentUser: User;
@@ -38,8 +38,8 @@ export class HomePage implements AfterViewInit, NavigationI {
 
   getCards() {
     this.recommendationService
-      .getRecommendations(this.currentUser)
-      .subscribe(data => {
+      .getRecommendations(this.currentUser as CandidateModel)
+      .subscribe((data) => {
         this.recommendations = data;
         this.cards = data.getCards();
       });
@@ -94,7 +94,7 @@ export class HomePage implements AfterViewInit, NavigationI {
 
   mapJobPostCardToJobPostModel(card: JobPostCard): JobPostModel {
     return this.recommendations.recommendedPosts.find(
-      rec => rec.uuid === card.uuid
+      (rec) => rec.uuid === card.uuid
     );
   }
 
